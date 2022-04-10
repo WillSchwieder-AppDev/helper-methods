@@ -22,4 +22,7 @@ Rails.application.routes.draw do
   delete "/movies/:id" => "movies#destroy"
 
   #------------------------------
+
+  resources :animals
+  
 end

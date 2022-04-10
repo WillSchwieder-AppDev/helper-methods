@@ -1,0 +1,65 @@
+<h1>
+  List of all animals
+</h1>
+
+<hr>
+
+<div>
+  <%= link_to "Add a new animal", new_animal_path %>
+</div>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Name
+    </th>
+
+    <th>
+      Appearance
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @list_of_animals.each do |a_animal| %>
+  <tr>
+    <td>
+      <%= a_animal.id %>
+    </td>
+
+    <td>
+      <%= a_animal.name %>
+    </td>
+
+    <td>
+      <%= a_animal.appearance %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(a_animal.created_at) %> ago
+    </td>
+    <td>
+      <%= time_ago_in_words(a_animal.updated_at) %> ago
+    </td>
+
+    <td>
+      <%= link_to "Show Details", animal_path(a_animal.id) %>
+    </td>
+  </tr>
+  <% end %>
+</table>

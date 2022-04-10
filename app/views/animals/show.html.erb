@@ -1,0 +1,51 @@
+<div>
+  <div>
+    <h1>
+      Animal #<%= @animal.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <%= link_to "Go back", animals_path %>
+      </div>
+
+      <div>
+        <%= link_to "Edit animal", edit_animal_path(@animal.id) %>
+      </div>
+
+      <div>
+        <%= link_to "Delete animal", animal_path(@animal.id), method: :delete %>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @animal.name %>
+      </dd>
+
+      <dt>
+        Appearance
+      </dt>
+      <dd>
+        <%= @animal.appearance %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@animal.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@animal.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>

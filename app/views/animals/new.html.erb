@@ -1,0 +1,19 @@
+<h1>New Animal</h1>
+
+<% @animal.errors.full_messages.each do |message| %>
+  <p style="color: red;"><%= message %></p>
+<% end %>
+
+<%= form_with(model: @animal) do |form| %>
+  <div>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :appearance %>
+    <%= form.text_area :appearance, rows: 3 %>
+  </div>
+
+  <%= form.button %>
+<% end %>

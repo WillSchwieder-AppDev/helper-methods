@@ -40,8 +40,9 @@ class AnimalsController < ApplicationController
   end
 
   def update
+    @animal = Animal.find(params.fetch(:id))
     animal_attributes = params.require(:animal).permit(:name, :appearance)
-    @animal = Animal.new(animal_attributes)
+    @animal.update(animal_attributes)
 
     if @animal.valid?
       @animal.save
